@@ -1,38 +1,112 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  background-color: #f0f0f0; /* Set background color here */
+  /* height: 1000px; /* Set initial height */
+  /* overflow: hidden; Hide overflowing content */ 
 }
 
-.App-link {
-  color: #61dafb;
+
+.sidebar {
+  width: 15%;
+  background-color: #ae00ff;
+  padding: 4.5rem 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-title {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+
+
+}
+
+.sidebar-label {
+  display: block;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight:bold;
+}
+
+.sidebar-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar-input-description {
+  width: 100%;
+  height: 100px;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #080808;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-button:hover {
+  background-color: #860192;
+}
+
+.separation-bar{
+border: 1px solid #0303030c;
+
+}
+
+/* .Notes{
+  width: 80%;
+  height: 100%;
+  background-color: #f0f0f0;
+} */
+
+/* Modal styles (you can add this later when implementing the modal) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Notes {
+  width: 80%;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
