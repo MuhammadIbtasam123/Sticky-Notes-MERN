@@ -21,6 +21,10 @@ Note.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    dateTime: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,

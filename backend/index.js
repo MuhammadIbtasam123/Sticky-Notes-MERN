@@ -22,9 +22,9 @@ app.get("/notes", async (req, res) => {
 
 app.post("/createNote", async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, dateTime } = req.body;
     // create a note
-    const note = await Note.create({ title, description });
+    const note = await Note.create({ title, description, dateTime });
     // get all notes from database
     const notes = await Note.findAll();
     const allNotes = notes.map((note) => note.dataValues);
@@ -32,6 +32,27 @@ app.post("/createNote", async (req, res) => {
   } catch (error) {
     console.error("Unable to create note", error);
     res.status(500).send({ error: "Unable to create note" });
+  }
+});
+
+app.patch("/updateNote/:id", async (req, res) => {
+  try {
+    console.log(req.body);
+    const { id } = req.params;
+    const { title, description, dateTime } = req.body;
+    // update a note
+    const noteUpdate = await Note.update(
+      { title, description, dateTime },
+      { where: { id } }
+    );
+    console.log(noteUpdate);
+    // get all notes from database
+    const notes = await Note.findAll();
+    const allNotes = notes.map((note) => note.dataValues);
+    res.status(200).send({ notes: allNotes });
+  } catch (error) {
+    console.error("Unable to update note", error);
+    res.status(500).send({ error: "Unable to update note" });
   }
 });
 

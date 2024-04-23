@@ -9,6 +9,7 @@ const Sidebar = (props) => {
     setDescription,
     AddNote,
     edit,
+    setEdit,
     EditNoteId,
     sendEditNoteAPICall,
   } = props;
@@ -37,16 +38,18 @@ const Sidebar = (props) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      {edit ? (
+      {edit && (
         <button
           onClick={() => {
             sendEditNoteAPICall(EditNoteId);
+            setEdit(false);
           }}
           class="sidebar-button"
         >
           Edit note
         </button>
-      ) : (
+      )}
+      {!edit && (
         <button onClick={AddNote} class="sidebar-button">
           {" "}
           Add note
