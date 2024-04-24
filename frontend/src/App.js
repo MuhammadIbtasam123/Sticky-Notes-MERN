@@ -11,6 +11,7 @@ function App() {
   const [edit, setEdit] = React.useState(false);
   const [EditNoteId, setEditNoteId] = React.useState(null);
   const [dateTime, setDateTime] = React.useState("");
+  const [toggle, setToggle] = React.useState(false);
 
   //  Function to get current date and time
   const getCurrentDateTime = () => {
@@ -115,6 +116,8 @@ function App() {
           EditNote={EditNote}
           EditNoteId={EditNoteId}
           sendEditNoteAPICall={sendEditNoteAPICall}
+          toggle={toggle}
+          setToggle={setToggle}
         />
       </>
       {/* <div className="separation-bar"></div> */}
@@ -124,6 +127,7 @@ function App() {
           deleteNote={deleteNote}
           EditNote={EditNote}
           dateTime={dateTime}
+          toggle={toggle}
         />
       </>
     </div>

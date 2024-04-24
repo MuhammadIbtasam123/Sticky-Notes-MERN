@@ -8,9 +8,20 @@ import {
 } from "@heroicons/react/24/outline";
 // import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
 const Notes = (props) => {
-  const { notes, deleteNote, EditNote } = props;
+  const { notes, deleteNote, EditNote, toggle } = props;
   return (
-    <div className="notes">
+    <div
+      className="notes"
+      style={
+        toggle
+          ? {
+              backgroundColor: "#000000",
+            }
+          : {
+              backgroundColor: "#ffffff",
+            }
+      }
+    >
       {notes.map((note) => (
         <div key={note.id} className="notes-list">
           <div

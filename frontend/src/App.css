@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: row;
-  background-color: #f0f0f0; /* Set background color here */
+  /* background-color: # ; */
   /* height: 1000px; /* Set initial height */
   /* overflow: hidden; Hide overflowing content */
 }
@@ -18,6 +18,7 @@
 
 .sidebar-title {
   margin-top: 0;
+  margin: 0;
   font-size: 24px;
   text-align: center;
 
@@ -38,6 +39,7 @@
   margin-top: 8px;
   margin-bottom: 20px;
   box-sizing: border-box;
+  border-radius: 0.25rem;
 }
 
 .sidebar-input-description {
@@ -47,6 +49,8 @@
   margin-top: 8px;
   margin-bottom: 20px;
   box-sizing: border-box;
+  border-radius: 0.25rem;
+
 }
 
 .sidebar-button {
@@ -56,6 +60,8 @@
   color: #080808;
   border: none;
   cursor: pointer;
+  border-radius: 0.25rem;
+
 }
 
 .sidebar-button:hover {

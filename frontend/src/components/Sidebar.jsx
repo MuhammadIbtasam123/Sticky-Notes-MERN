@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-
+import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 const Sidebar = (props) => {
   const {
     title,
@@ -12,10 +12,41 @@ const Sidebar = (props) => {
     setEdit,
     EditNoteId,
     sendEditNoteAPICall,
+    toggle,
+    setToggle,
   } = props;
   return (
     <div class="sidebar">
-      <h2 class="sidebar-title">NoteKeeper</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h2 class="sidebar-title">NoteKeeper</h2>
+        {toggle && (
+          <SunIcon
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+            style={{
+              height: "2rem",
+            }}
+          />
+        )}
+        {!toggle && (
+          <MoonIcon
+            onClick={() => {
+              setToggle(!toggle);
+            }}
+            style={{
+              height: "2rem",
+            }}
+          />
+        )}
+      </div>
+
       <label for="title" class="sidebar-label">
         Title
       </label>

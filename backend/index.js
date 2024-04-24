@@ -37,7 +37,6 @@ app.post("/createNote", async (req, res) => {
 
 app.patch("/updateNote/:id", async (req, res) => {
   try {
-    console.log(req.body);
     const { id } = req.params;
     const { title, description, dateTime } = req.body;
     // update a note
@@ -61,7 +60,6 @@ app.post("/deleteNote/:id", async (req, res) => {
     const { id } = req.params;
     // delete a note
     const noteDelete = await Note.destroy({ where: { id } });
-    console.log(noteDelete);
     // get all notes from database
     const notes = await Note.findAll();
     const allNotes = notes.map((note) => note.dataValues);
